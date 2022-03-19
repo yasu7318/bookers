@@ -1,0 +1,9 @@
+<h1>Books</h1>
+<% @books.each do |book| %>
+
+  <p>Title</p>
+  <span>
+    <%= book.title, "/books/#{book.id}" %>
+  </span>
+  
+<% end %>
