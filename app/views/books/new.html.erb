@@ -1,9 +1,17 @@
 <h1>Books</h1>
 <% @books.each do |book| %>
+<% if Book.new.errors.any? %>
+  <%= Book.nwe.errors.count %>件のエラーが発生しました
+  <ul>
+    <% Book.new.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
   <p>Title</p>
   <span>
-    <%= book.title, "/books/#{book.id}" %>
+    <%= link_to book.title, "/books/#{book.id}" %>
   </span>
   
 <% end %>
